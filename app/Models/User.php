@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use PDO;
 
 class User extends Authenticatable
 {
@@ -46,5 +47,13 @@ class User extends Authenticatable
     public function tasks()
     {
         return $this->hasMany(Task::class, 'user_id', 'id');
+    }
+    public function isAdmin()
+    {
+        if ($this->role == config('global.role.ROLE_ADMIN')) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

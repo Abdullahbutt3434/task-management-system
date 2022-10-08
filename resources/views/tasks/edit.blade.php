@@ -21,8 +21,7 @@
         <h6 class="mb-4">Create Task</h6>
         <form action="{{ route('tasks.update') }}" method="POST" id="createTask">
             @csrf
-            @method('PUT')
-            <input type="text" hidden name="id" value="{{ $task->id }}">
+            <input type="text" name="id" value="{{ $task->id }}" hidden>
             <div class="row">
                 <div class="col-sm-6">
                     <div class="form-floating mb-3">

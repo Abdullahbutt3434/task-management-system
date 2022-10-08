@@ -31,6 +31,20 @@ class TaskSeeder extends Seeder
             'user_id' => 1
         ]);
         Task::create([
+            'name' => 'Developement p1',
+            'priority' => 3,
+            'start' => Carbon::now(),
+            'end' => Carbon::now(),
+            'user_id' => 1
+        ]);
+        Task::create([
+            'name' => 'Developement p2',
+            'priority' => 4,
+            'start' => Carbon::now(),
+            'end' => Carbon::now(),
+            'user_id' => 1
+        ]);
+        Task::create([
             'name' => 'Deployment',
             'priority' => 1,
             'start' => Carbon::now(),

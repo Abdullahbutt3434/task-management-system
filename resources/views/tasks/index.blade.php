@@ -47,7 +47,8 @@
                 <tbody>
                     @foreach ($tasks as $key=>$task)
                     <tr>
-                        <th scope="row">{{$key+ $tasks->firstItem()}}</th>
+                        {{-- <th scope="row">{{$key+ $tasks->firstItem()}}</th> --}}
+                        <th scope="row">{{$task->id}}</th>
 
 
                         <td>{{ $task->user->name }}</td>
@@ -69,7 +70,7 @@
                     @endforeach
                 </tbody>
             </table>
-            {{ $tasks->links() }}
+            {{-- {{ $tasks->links() }} --}}
 
         </div>
     </div>

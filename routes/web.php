@@ -44,11 +44,13 @@ Route::middleware(['auth'])->group(
                 Route::get('add-task', [TaskController::class, 'create'])->name('create');
                 Route::post('tasks', [TaskController::class, 'store'])->name('store');
                 Route::get('task/{id}', [TaskController::class, 'edit'])->name('edit');
-                Route::put('task', [TaskController::class, 'update'])->name('update');
+                Route::post('task', [TaskController::class, 'update'])->name('update');
                 Route::post('delete', [TaskController::class, 'destory'])->name('destory');
 
                 // task assigned to me 
                 Route::get('my-task', [TaskController::class, 'myTasks'])->name('myTasks');
+                Route::get('my-task-table', [TaskController::class, 'taskTable'])->name('taskTable');
+                Route::post('task-order-update', [TaskController::class, 'taskOrderUpdate'])->name('orderUpdate');
             }
         );
     }
